@@ -1,4 +1,5 @@
 import React from 'react';
+import { Part } from './Part';
 
 const totalParts = {
     body: 17,
@@ -19,58 +20,18 @@ const totalParts = {
 
 const PartList= ({partname}) =>{
     const total = totalParts[partname];
+    const partList = [];
+    for (let i = 0; i <total; i++){
+        partList.push(<Part url = />)
+    };
+
     return(
         <>
         <div>
             <h3>title</h3>
-            <div>
-                {(() => {
-                     const buttons = [];
-                     for (let i = 0; i < 12; i++) {
-                        buttons.push (
-                            <button key={i}>
-                                <img src='body/1.png' alt=""></img>
-                            </button>
-                        );
-                     }
-                     return buttons;
-                })
-            }
-            </div>
         </div>
         </>
     );
 };
 export default PartList;
 
-
-const PartList= ({partname}) =>{
-    const total = totalParts[partname];
-    const parts = [];
-
-for (let i = 0; i < total; i++) {
- parts.push(<Part url=`xxx` />);
-}
-    return(
-        <>
-        <div>
-            <h3>title</h3>
-            <div>
-                {(() => {
-                     const buttons = [];
-                     for (let i = 0; i < 12; i++) {
-                        buttons.push (
-                            <button key={i}>
-                                <img src='body/1.png' alt=""></img>
-                            </button>
-                        );
-                     }
-                     return buttons;
-                })
-            }
-            </div>
-        </div>
-        </>
-    );
-};
-export default PartList;
