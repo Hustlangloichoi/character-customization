@@ -18,7 +18,6 @@ const totalParts = {
   clothes_layer1: 5,
   clothes_layer2: 5,
   clothes_layer3: 9,
-  
 };
 
 function App() {

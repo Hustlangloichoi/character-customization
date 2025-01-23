@@ -42,3 +42,35 @@ const PartList= ({partname}) =>{
     );
 };
 export default PartList;
+
+
+const PartList= ({partname}) =>{
+    const total = totalParts[partname];
+    const parts = [];
+
+for (let i = 0; i < total; i++) {
+ parts.push(<Part url=`xxx` />);
+}
+    return(
+        <>
+        <div>
+            <h3>title</h3>
+            <div>
+                {(() => {
+                     const buttons = [];
+                     for (let i = 0; i < 12; i++) {
+                        buttons.push (
+                            <button key={i}>
+                                <img src='body/1.png' alt=""></img>
+                            </button>
+                        );
+                     }
+                     return buttons;
+                })
+            }
+            </div>
+        </div>
+        </>
+    );
+};
+export default PartList;
