@@ -12,7 +12,7 @@ const PartList= ({partname, totalParts}) =>{
     return(
         <>
         <div>
-            <h3>title</h3>
+            <h3>{partname}</h3>
             <div>{partList}</div>
         </div>
         </>

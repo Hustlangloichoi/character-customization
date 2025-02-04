@@ -50,9 +50,20 @@ function App() {
     </div> */}
     
     <div>
-      <PartList partname = {body} totalParts={totalParts}/>
+      {/* <PartList partname = {body} totalParts={totalParts}/> */}
+      {Object.keys(totalParts).map((key, index) => (
+      <PartList key={index} partname={key} totalParts={totalParts} />
+    ))}
     </div>
   </div>
+
+/* <div className='app-container'>
+<div>
+  {Object.entries(totalParts).map(([key, value], index) => (
+    <PartList key={index} partname={value} />
+  ))}
+</div>
+</div> */
   );
 }
 
