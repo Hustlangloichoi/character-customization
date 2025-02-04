@@ -1,9 +1,10 @@
-import react from "react";
+import React from "react";
 
-export const Part = ({url}) => {
+const Part = ({url}) => {
     return (<button>
-        <img src={url}> </img>
+        <img src={url} alt="" />
 </button>
 )
 }
 
+export default Part;

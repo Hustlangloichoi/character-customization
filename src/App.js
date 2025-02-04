@@ -3,6 +3,7 @@ import './App.css';
 import Avatar from './components/Avatar';
 import PartList from './components/PartList';
 
+
 const totalParts = {
   body: 17,
   eyes: 17,
@@ -19,6 +20,8 @@ const totalParts = {
   clothes_layer2: 5,
   clothes_layer3: 9,
 };
+
+const body = (Object.keys(totalParts)[0]);
 
 function App() {
   const [handlePartChoice, sethandlePartChoice] = useState({
@@ -37,14 +40,17 @@ function App() {
     clothes_layer2: 1,
     clothes_layer3: 1,
   })
+
+  
+
   return (
   <div className='app-container'>
-    <div>
+    {/* <div>
       <Avatar handlePartChoice = {handlePartChoice}/>
-    </div>
+    </div> */}
     
     <div>
-      <PartList/>
+      <PartList partname = {body} totalParts={totalParts}/>
     </div>
   </div>
   );
