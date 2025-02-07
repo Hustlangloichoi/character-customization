@@ -11,9 +11,9 @@ const PartList= ({partname, totalParts, setHandlePartChoice, handlePartChoice}) 
 
     return(
         <>
-        <div>
-            <h3>{partname}</h3>
-            <div>{partList}</div>
+        <div className='list'>
+            <h3 className='list-title'>{partname}</h3>
+            <div className='partList'>{partList}</div>
         </div>
         </>
     );
