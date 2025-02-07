@@ -7,7 +7,7 @@ import PartList from './components/PartList';
 const totalParts = {
   body: 17,
   eyes: 17,
-  nose: 1,
+  noses: 1,
   hair: 73,
   facial_hair:17,
   mouths: 24,
@@ -21,10 +21,9 @@ const totalParts = {
   clothes_layer3: 9,
 };
 
-const body = (Object.keys(totalParts)[0]);
 
 function App() {
-  const [handlePartChoice, sethandlePartChoice] = useState({
+  const [handlePartChoice, setHandlePartChoice] = useState({
     body: 1,
     eyes: 1,
     noses: 1,
@@ -45,14 +44,13 @@ function App() {
 
   return (
   <div className='app-container'>
-    {/* <div>
+    <div className='avatar'>
       <Avatar handlePartChoice = {handlePartChoice}/>
-    </div> */}
-    
-    <div>
+    </div>
+    <div className='allPartLists'>
       {/* <PartList partname = {body} totalParts={totalParts}/> */}
       {Object.keys(totalParts).map((key, index) => (
-      <PartList key={index} partname={key} totalParts={totalParts} />
+      <PartList key={index} partname={key} totalParts={totalParts} setHandlePartChoice={setHandlePartChoice} handlePartChoice={handlePartChoice} />
     ))}
     </div>
   </div>

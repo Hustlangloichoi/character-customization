@@ -2,11 +2,11 @@ import React from 'react';
 import Part from "./Part";
 
 
-const PartList= ({partname, totalParts}) =>{
+const PartList= ({partname, totalParts, setHandlePartChoice, handlePartChoice}) =>{
     const partList = [];
         const total = totalParts[partname];
         for (let i = 1; i <=total; i++){
-            partList.push(<Part url ={`${partname}/${i}.png`}/>)
+            partList.push(<Part key={i} url ={`${partname}/${i}.png`} index = {i} setHandlePartChoice={setHandlePartChoice} handlePartChoice={handlePartChoice} partname={partname} />)
         };
 
     return(
