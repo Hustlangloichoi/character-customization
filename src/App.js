@@ -20,12 +20,21 @@ const totalParts = {
   clothes_layer2: 5,
   clothes_layer3: 9,
 };
+const randomizeNumber = (part: string) => {
+  const max = totalParts[part];
+  onst randomNumber = 0;
+  return randomNumber;
+};
 
+const randomizeNumber = (max: number) => {
+  const randomNumber = 0;
+  return randomNumber;
+};
 
 function App() {
   const [handlePartChoice, setHandlePartChoice] = useState({
-    body: 1,
-    eyes: 1,
+    body: randomizeNumber(totalParts.body),
+    eyes: randomizeNumber('eyes'),
     noses: 1,
     hair: 1,
     facial_hair:1,
