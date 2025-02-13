@@ -1,5 +1,5 @@
 import React from 'react';
-const Avatar = ({handlePartChoice}) =>{
+const Avatar = ({handlePartChoice, randomizeButton}) =>{
     return(
     <>
         <img
@@ -73,6 +73,11 @@ const Avatar = ({handlePartChoice}) =>{
             alt="clothes_layer3"
             className='clothes_layer3 avatar_img'
         />
+
+<button className="randomize"
+    onClick={()=> randomizeButton()}>
+        Randomize
+</button>
     </>
     );
 };

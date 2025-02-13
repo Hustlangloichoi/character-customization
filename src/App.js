@@ -20,57 +20,35 @@ const totalParts = {
   clothes_layer2: 5,
   clothes_layer3: 9,
 };
-const randomizeNumber = (part: string) => {
+const randomizeNumber = (part) => {
   const max = totalParts[part];
-  onst randomNumber = 0;
-  return randomNumber;
-};
-
-const randomizeNumber = (max: number) => {
-  const randomNumber = 0;
+  const randomNumber = Math.floor(Math.random() * max) + 1;
   return randomNumber;
 };
 
 function App() {
-  const [handlePartChoice, setHandlePartChoice] = useState({
-    body: randomizeNumber(totalParts.body),
-    eyes: randomizeNumber('eyes'),
-    noses: 1,
-    hair: 1,
-    facial_hair:1,
-    mouths: 1,
-    eyebrows: 1,
-    earrings: 0,
-    glasses: 0,
-    hats: 0,
-    neckwear:0,
-    clothes_layer1: 1,
-    clothes_layer2: 1,
-    clothes_layer3: 1,
-  })
-
-  
+  const [handlePartChoice, setHandlePartChoice] = useState(Object.fromEntries(
+    Object.keys(totalParts).map((key) => [key, randomizeNumber(key)])
+  ))
+  const randomizeButton = () => {
+    setHandlePartChoice(
+      Object.fromEntries(
+        Object.keys(totalParts).map((key) => [key, randomizeNumber(key)])
+      )
+    );
+  };
 
   return (
   <div className='app-container'>
     <div className='avatar'>
-      <Avatar handlePartChoice = {handlePartChoice}/>
+      <Avatar handlePartChoice = {handlePartChoice} randomizeButton={randomizeButton}/>
     </div>
     <div className='allPartLists'>
-      {/* <PartList partname = {body} totalParts={totalParts}/> */}
       {Object.keys(totalParts).map((key, index) => (
       <PartList key={index} partname={key} totalParts={totalParts} setHandlePartChoice={setHandlePartChoice} handlePartChoice={handlePartChoice} />
     ))}
     </div>
   </div>
-
-/* <div className='app-container'>
-<div>
-  {Object.entries(totalParts).map(([key, value], index) => (
-    <PartList key={index} partname={value} />
-  ))}
-</div>
-</div> */
   );
 }
 
